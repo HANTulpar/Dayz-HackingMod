@@ -100,7 +100,7 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName  = "Decoder Tablet";
-		descriptionShort  = "A Tablet Used for hacking into buildings or tents protected by a code lock";
+		descriptionShort  = "Bir Code Lock ile korunan binalara veya çadırlara sızmak için kullanılan bir Tablet";
 		model = "HackingMod\Data\DecoderTablet.p3d";
 		itemSize[] = {4,3};
 		weight = 800;
@@ -154,7 +154,7 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName  = "Tablet Battery";
-		descriptionShort  = "A Battery to put in tablets";
+		descriptionShort  = "Tablet koymak için bir Pil";
 		model = "HackingMod\Data\TabletBattery.p3d";
 		itemSize[] = {1,1};
 		weight = 100;

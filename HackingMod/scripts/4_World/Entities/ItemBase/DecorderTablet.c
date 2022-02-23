@@ -93,7 +93,7 @@ class DecoderTablet extends ItemBase{
 	void StartHackServer(ItemBase HackingTarget, PlayerBase Hacker){
 		PlayerBase hacker = PlayerBase.Cast(Hacker);
 		ItemBase hackingTarget = ItemBase.Cast(HackingTarget);
-		string heading = "HACK STARTED";
+		string heading = "HACK BAŞLADI";
 		string resumed = " has started";
 		if (hacker && hackingTarget){
 			m_HackingCompleted = false;
@@ -122,7 +122,7 @@ class DecoderTablet extends ItemBase{
 				}
 				GetGame().AdminLog("[HackingMod][Raid][ID:" + GetHackID() + "] " + hacker.GetIdentity().GetName() + "(" +  hacker.GetIdentity().GetPlainId() + ") has resumed hacking " + hackingTarget.GetType() + " at " + hackingTarget.GetPosition());
 			}
-			SendPlayerMessage(hacker, heading, "The hacking of " + hackingTarget.GetDisplayName() + resumed);
+			SendPlayerMessage(hacker, heading, "hacklenmesi" + hackingTarget.GetDisplayName() + resumed);
 			GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater(this.CheckHackProgress, 2000, false, hackingTarget, hacker);
 			SetSynchDirty();
 		}
@@ -209,7 +209,7 @@ class DecoderTablet extends ItemBase{
 			} else {
 				hackingTarget.InterruptHack();
 				this.InterruptHack();
-				SendPlayerMessage(hacker, "HACK INTERRUPTED", "The hacking of " + hackingTarget.GetDisplayName() + " has been interrupted");
+				SendPlayerMessage(hacker, "HACK KESİNTİYE", "hacklenmesi" + hackingTarget.GetDisplayName() + " kesintiye uğradı");
 			}
 		}else{
 			m_HackingStarted = false;
@@ -256,7 +256,7 @@ class DecoderTablet extends ItemBase{
 			m_TabletON = false;
 		}
 		if (m_HackingCompleted){
-			SendPlayerMessage(Hacker, "HACK FINISHED", "The hacking of " + hackingTarget.GetDisplayName() + " has finished");
+			SendPlayerMessage(Hacker, "Hack Bitti, Kilit kırıldı", "The hacking of " + hackingTarget.GetDisplayName() + " Hack Başarılı.");
 		}
 		SetSynchDirty();
 	}
